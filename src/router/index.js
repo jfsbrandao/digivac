@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Cadastro from '../views/Cadastro'
+import Login from '../views/Login'
+import EVac from '../views/EVac'
+import Home from '../views/Home'
+import NewVax from '../views/NewVax'
+import QrCode from '../views/QrCode'
+import Card from '../views/Card'
 
 Vue.use(VueRouter)
 
@@ -8,15 +14,37 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    component: Login
+  },
+  {
+    path: '/cadastro',
+    name: 'Register',
+    component: Cadastro
+  },
+  {
+    path: '/EVac',
+    name: 'EVac',
+    component: EVac
+  },
+  {
+    path: '/Main',
+    name: 'Main',
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/NewVax',
+    name: 'NewVax',
+    component: NewVax
+  },
+  {
+    path: '/QrCode',
+    name: 'QrCode',
+    component: QrCode
+  },
+  {
+    path: '/:id',
+    name: 'Card',
+    component: Card
   }
 ]
 
